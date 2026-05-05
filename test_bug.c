@@ -14,7 +14,7 @@ int main(void)
     pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
     int r1, r2, r3, r4;
     r1= pthread_mutex_trylock(&mutex);
-    printf("first trylock: %d (%s)\n", r2, errname(r2));
+    printf("first trylock: %d (%s)\n", r1, errname(r1));
     r2 = pthread_mutex_trylock(&mutex);
     printf("second trylock: %d (%s)\n", r2, errname(r2));
     r3 = pthread_mutex_unlock(&mutex);
