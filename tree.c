@@ -2,6 +2,7 @@
 #include <string.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <unistd.h> // para lstat  
 
 void print_tree(const char *path, int depth)
 {
@@ -43,12 +44,21 @@ void print_tree(const char *path, int depth)
 		{
 		print_tree(full_path, depth + 1);
 		}
+<<<<<<< HEAD
 	    }
          }
  	 closedir(dir);
 }    
        int main(int argc, char *argv[]) 
        { 
+=======
+	   }
+       }
+ 	closedir(dir);
+   }    
+   int main(int argc, char *argv[]) 
+   { 
+>>>>>>> 1242f799adc1ab073ea050785f8ad0e25605551b
 	const char *start_path = (argc > 1) ? argv[1] : ".";
 	
 	printf("%s\n", start_path);
@@ -56,4 +66,8 @@ void print_tree(const char *path, int depth)
 	print_tree(start_path, 0);
 	
 	return 0;  
+<<<<<<< HEAD
        }
+=======
+}
+>>>>>>> 1242f799adc1ab073ea050785f8ad0e25605551b
