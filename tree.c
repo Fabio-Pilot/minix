@@ -37,7 +37,7 @@ void print_tree(const char *path, int depth)
            snprintf(full_path, sizeof(full_path), "%s/%s", path, entry->d_name);
 
 		//is it a folder?
-	   if (stat(full_path, &st) == 0)
+	   if (lstat(full_path, &st) == 0)
  	   {
 		if (S_ISDIR(st.st_mode)) 
 		{
@@ -45,17 +45,15 @@ void print_tree(const char *path, int depth)
 		}
 	   }
        }
-	closedir(dir);
-}
-
-int main(int argc, char *argv[]) 
-{
+ 	closedir(dir);
+   }    
+   int main(int argc, char *argv[]) 
+   { 
 	const char *start_path = (argc > 1) ? argv[1] : ".";
 	
 	printf("%s\n", start_path);
 	
 	print_tree(start_path, 0);
 	
-	return 0;
-} 
-
+	return 0;  
+}
